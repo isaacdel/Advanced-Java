@@ -1,0 +1,48 @@
+isaacdel
+
+
+
+
+
+==================
+=  Description:  =
+==================
+this program will convert math terms written with simple characters to Latex. 
+
+=============================
+design
+=============================
+
+README                 This file
+BinaryMathTerm.java - extends mathterm ,represents a term composed of exactly
+ two independent math terms.
+BracketsMathTerm.java - extends mathterm,represents a math term between
+ brackets (See latex's \right( and \left))
+FractionMathTerm.java - extends binary mathterm represents a special case of
+ binary math term. 
+It should be rendered as a fraction ("kav shever" in hebrew).
+MathTerm.java - represents the base class for all other MathTerms classes
+SimpleBinaryOpMathTerm.java - extends binary mathterm ,represents a simple 
+operation between two other terms. For example, "a+b", "c*d" or "c=d","x
+SimpleMathTerm.java - extends mathterm,represents a math term which is either
+ a single letter variable (x,y,a,b,etc..) or a number
+SumMathTerm.java - extends mathterm,represents a mathematical sum.
+ It comprised of 3 MathTerms: - Term beneath the sigma sign
+*the classes that inherit from mathterm need all of the characteristics 
+of a mathterm like 
+knowing if its a part of an exp or its barred etc.
+*the classes that inherit from binary mathterm usualy "work" with two
+ mathterms like fraction so their tolatex
+ will print two terms that each one of them 
+may be built of few mathterms.
+
+=  Implementation Issues  =
+mentioned some in the q&a
+
+Answers to Questions:
+1)i would create a new integral class like the sum class because the limits
+ of the integral could be complex expressions 
+like the limits of the sum.it will extend MathTerm as well.
+2)there were few times when giving a more detailed explanation could help 
+with the testers,like the case that the order of the 
+/negated,/exp and /barred in the method is important.
