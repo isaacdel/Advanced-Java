@@ -1,0 +1,243 @@
+isaacdel
+
+==================
+=  Description:  =
+==================
+this program will create two different hash tables.Chained and Open hash. 
+
+=============================
+design
+=============================
+
+README                 This file
+OpenHashSet – a hash-set based on open-hashing with quadratic probing. Extends
+SimpleHashSet.
+ChainedHashSet – a hash-set based on chaining. Extends SimpleHashSet.
+SimpleHashSet – an abstract class implementing SimpleSet
+CollectionFacadeSet – a facade wrapping the collections used in the exercise.
+SimpleSetPerformanceAnalyzer – has a main method that measures the run-times 
+
+
+=  Implementation Issues  =
+
+
+Answers to Questions:
+1)all of the descriptions are above in the design part.
+2)i used an arraylist that contains a linked list in every cell.that way i 
+can push the strings to the same cell in case the hash codes collide.
+3)to be able to add a string to a cell that was deleted i simply flagged the
+deleted cell with the string deleted that way this cell points at that string 
+and i can check if it holds,if it does i can add to that cell.
+4)the results with headers for each question in the analyzer sections are:
+****EX1*******
+the times for Tree,List,Hash,chainedHash,openHash are:
+133
+53321
+101
+38793
+274778
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+*2)HashSet*
+3)chainedHash
+4)openHash
+
+****EX2*******
+the times for Tree,List,Hash,chainedHash,openHash are:
+137
+35725
+57
+380
+376
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+*2)HashSet*
+3)chainedHash
+4)openHash
+is:13
+****EX3*******
+for data 1:
+the times for Tree,List,Hash,chainedHash,openHash are:
+133
+53321
+101
+38793
+274778
+for data 2:
+the times for Tree,List,Hash,chainedHash,openHash are:
+137
+35725
+57
+380
+376
+****EX4*******
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+3
+1
+0
+1
+and the quickest data base from
+*0)TreeSet*
+1)LinkedList
+2)HashSet
+*3)chainedHash*
+4)openHash
+****EX5*******
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+3
+0
+4
+1
+and the quickest data base from
+*0)TreeSet*
+1)LinkedList
+*2)HashSet*
+3)chainedHash
+4)openHash
+****EX6*******
+for "hi":
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+3
+1
+0
+1
+for “-13170890158”:
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+3
+0
+4
+1
+
+****EX6 for DATA2*******
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+0
+0
+0
+0
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+2)HashSet
+3)chainedHash
+4)openHash
+all same time
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+2
+0
+0
+0
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+2)HashSet
+3)chainedHash
+4)openHash
+slowest is linked list
+****EX7*******
+------4-------
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+2
+0
+0
+0
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+2)HashSet
+3)chainedHash
+4)openHash
+slowest is linked list
+------5-------
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+2
+0
+0
+0
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+2)HashSet
+3)chainedHash
+4)openHash
+slowest is linked list
+------6-------
+***the results compering hi vs -13170890158 with data2 are:
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+2
+0
+0
+0
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+2)HashSet
+3)chainedHash
+4)openHash
+slowest is linked list
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+2
+0
+0
+0
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+2)HashSet
+3)chainedHash
+4)openHash
+slowest is linked list
+***the results compering hi vs 23 with data2 are:
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+2
+0
+0
+0
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+2)HashSet
+3)chainedHash
+4)openHash
+slowest is linked list
+the times for Tree,List,Hash,chainedHash,openHash are:
+0
+0
+0
+0
+0
+and the quickest data base from
+0)TreeSet
+1)LinkedList
+2)HashSet
+3)chainedHash
+4)openHash
+all same time
+
+5)
+*
+*for the contains operation it dosent matter witch data base we use,they all
+have times close to zero milisecs. for an input with a lot of collitions i will
+use a LinkedList. its also the fastest with a less colliding inputs but the
+difference in the first is much more noticeable.
+*the open and chained were close,though the open hashing took much longer
+ in some cases.
+*my implementations were much slower than java's in feeding datas but
+had same times using contains.
+* i was surprised that the contains operation was so fast,but i expected 
+feeding data 1 will take a lot of time in my implementations.
+*the people who work for oracle work really hard and they get payed for it.
+*the change using bit operation instead of modulo was noticeable indeed.
+
