@@ -1,0 +1,136 @@
+isaacdel
+
+==================
+=  Description:  =
+==================
+this program will create a simple file explorer.
+=============================
+design
+=============================
+
+README                 This file
+##############################
+package ex6.filescript:
+
+MyFileScript.java - Contains the main method, performs the action
+ on a given dir and command file.
+ 
+Parser.java - Contains the parsing to sections method, used in MyFileScript 
+in order to create sections.
+
+Section.java - Contains the method which creates sections of Filter
+,Order objects.
+
+package ex6.filescript.Exceptions:
+oop.ex6.filescript.TypeOneError.java - A exception class for 
+the first type errors.
+
+oop.ex6.filescript.TypeTwoError.java - A exception class for the
+second type errors.
+
+oop.ex6.filescript.SubsectionExecption.java - A exception class for 
+the second type errors.extends TypeTwoError-throws an exception if 
+there is a problem with the command file sections.
+
+oop.ex6.filescript.IOExecption.java - A exception class for 
+the second type errors.extends TypeTwoError-throws when an IOexception
+is violated.
+##############################						
+package ex6.Filter:
+
+Filter.java - The interface from which all of the filter methods inherit.
+
+FilterFactory.java - Generates filters according to strings.
+
+BetweenFilter.java - Implements Filter, used to filter files that are bigger
+ or smaller than given values.
+ 
+ExecutableFilter.java - Implements Filter, used to filter files that are
+ (not)executable (depending on parameters).
+ 
+FileFilter.java - Implements Filter, used to filter files of a given name.
+
+GreaterThanFilter.java - Implements Filter, used to filter files which are
+ smaller than a given value.
+ 
+HiddenFilter.java - Implements Filter, used to filter files that are (not)
+ hidden (depending on parameters).
+ 
+NotFilter.java - Implements Filter, decorator. used to deal with the
+ "NOT" argument.
+ 
+PrefixFilter.java - Implements Filter, used to filter files which start 
+with a given prefix.
+
+SmallerThanFilter.java - Implements Filter, used to filter files that are
+ bigger than a given value.
+ 
+SuffixFilter.java - Implements Filter, used to filter files which end with 
+a given suffix.
+
+WritableFilter.java - Implements Filter, used to filter files that are 
+(not) writable (depending on parameters).
+
+AllFilter.java-A default filter that is triggered when asked or when there 
+is a problem with the filter line.implements Filter.					
+
+ContainsFilter.java-A filter that checks if a file exists in the dir.
+						
+package ex6.Filter.exceptions:
+IllegalValuesExceptions.java - Implements TypeOneError, used to identify 
+bad value exceptions.
+##############################
+package ex6.Order:
+
+AbsOrder.java - extends FileOrder , used to sort the files by 
+absolute paths.
+
+FileOrder.java - Implements Comparator<File>, compares files by absolute path.
+
+OrderFactory.java - Generates orders according to strings.
+
+SizeOrder.java - extends FileOrder, sorts files by size.
+
+TypeOrder.java - extends FileOrder, sorts files by type.
+
+reverseOrder.java - extends FileOrder,sorts the given order in reverse order.
+
+
+package ex2.order.exceptions:
+OrderValueException - Implements TypeOneError, used to identify bad value 
+in order command.
+
+								
+
+
+=  Implementation Issues  =
+===========================
+
+Answers to Questions:
+
+1) Design:
+I chose to work with two main Interfaces-FILTER,ORDER.
+all of the sub classes that implement these interfaces act in different way
+and are used as wanted. 
+2)
+I also implemented a decorator in the Filter and
+Order packages so i could invert the action by just switching its boolean 
+instead of creating whole new class for NOTGreater,NOTBetween etc..
+The package filescript contains all of the classes which use all of the 
+ classes described in order to do the action of reading a command file and
+  performing the commands in it on the source directory. 
+ 
+3)
+Each package has its own relevant exceptions (type one or two) as needed,
+and each package uses its own exceptions.
+the TypeTwo exceptions are bubbled up until it reaches the main method-the
+MyFileScript than it exits the program.i thought its a better and more
+smooth solution than exiting in the middle of a sub class.
+the TypeOne exceptions are bubbled up until they reach the class where the 
+lines are counted- the Parser.
+
+4)
+The files(not inc folders) from the directory that passed the specific
+filter are stored in a ArrayList Collection than i apply the specific
+order by using the Collections.order that gets an collection-arraylist
+and a comperator-order to sort all of the relevant files in the wanted order.
