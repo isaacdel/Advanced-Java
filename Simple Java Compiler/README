@@ -1,0 +1,84 @@
+roee168
+isaacdel
+
+Files Description:
+package main:
+Compiler.java - run three times over the text identify each line according to the context
+parser.java - parse each line into words as needed
+sjavac.java - the main, read line and print thr result
+package check:
+AssingmentCheck.java - every line the contain '=' goes throw this class and divided into right and left
+ than it we treat each side as needed
+EndScope.java - goes if line is look like "}" that the class will remove things that is not needed
+IfWhileCheck - goes if the line issues with if or while declaration.
+MethodCallCheck - deal with calls for method
+methodDeclareCheck - deal if there is method declaration.
+return.java - deal with the line that contain return.
+RightSideCheck - check for the right side if there is assignment check.
+VariableCheck.java - contains all the checks regarded to variables.
+package utilities:
+ExceptionTypeOne.java - handle the informative explanation of the error.
+Method.java - create object of method
+RagexUtils.java - contains all the ragexes.
+Scope.java - contains Scope object.
+Store.java - held the data structure and sore all the valid variables for future checking.
+Variables.java - contains Variables object.
+
+design description:
+our design is very simple and we divided the program into three modules, each module we divided separated into
+smaller modules as needed. 
+first we take the text clean it from  irrelevant parts than passing it into the compiler witch take each line
+identify it and than pass it into the second large module witch receive the line and make all the checks regarded
+to the line that he receive.
+if needed to save information from this line for future checking than the information will pass to Store
+witch is a class that receive the information and save it in the right location so it will be easily accessible
+
+checks: each class design specific to check what it needs independently. in order to perform the check 
+effective as possible the can use few classes from the utilities such as ragexUtils
+if they need to extract information they can't access the data structure, the can only ask
+from Store. this class hold the data structures and the information regarding.
+
+data structure: our information is save in arrayList. this array hold object of Method.
+the first method is holding the globals variables
+than each Method object contains every info' that needed it also contain link list of Scope object.
+scope object contains all the variables that is refer to the scope.
+
+identify: before we perform for each line the checks we need to identify the line witch mean to see how it looks
+the compiler will identify according to 6 options. method declare, assignment, variable initialize, return line,
+end of scope, call for method.
+
+we choose this design because this design is relativly very independent is very understandable
+it also allow us to perform easy searching in the data structures.
+
+in this design we break each problem into small independent pieces (compossability) we also use single choise 
+by ordering the choises in specific locations.
+
+implementaions issues: the main issues was to think about the design of the program.
+and how to arrange the data structure.
+the main difficulty was to consider and take into account all of the possible and various options allowed in a single code line.
+we were able to solve and analyze most of them.the rest can be handled without major code changes only few tweaks.
+
+answers to questions:
+6.1
+we decided to handle errors by bubbling up the errors to the Compiler class.
+This class holds a default variable the is set to zero.once we catch an error the variable is changed to 1,and 
+the compiling process is stopped.
+then the result is printed to screen.
+
+6.2
+In case we want to add some new variables that are not currently supported,we would add the specific regex 
+to the type regex so the compiler will be aware the this new name
+is valid as well.
+then just add the string representation of the name to the Rightside class.
+
+to add else block all we need is to let the compiler to identify it and pass it throw the if while
+witch will open new scope.
+6.3
+the regex we used the most inside the code is the Method Declaration and the Variable declaration,because these 
+regex are the “root” of most valid code lines. 
+  
+       
+ 
+ 
+ 
+   
