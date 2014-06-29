@@ -1,7 +1,8 @@
 roee168
 isaacdel
 
-Files Description:
+==================Files Description:====================
+
 package main:
 Compiler.java - run three times over the text identify each line according to the context
 parser.java - parse each line into words as needed
@@ -24,7 +25,8 @@ Scope.java - contains Scope object.
 Store.java - held the data structure and sore all the valid variables for future checking.
 Variables.java - contains Variables object.
 
-design description:
+=====================Design description:=============================
+
 our design is very simple and we divided the program into three modules, each module we divided separated into
 smaller modules as needed. 
 first we take the text clean it from  irrelevant parts than passing it into the compiler witch take each line
@@ -75,7 +77,7 @@ to add else block all we need is to let the compiler to identify it and pass it 
 witch will open new scope.
 6.3
 the regex we used the most inside the code is the Method Declaration and the Variable declaration,because these 
-regex are the “root” of most valid code lines. 
+regex are the ï¿½rootï¿½ of most valid code lines. 
   
        
  
