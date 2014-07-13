@@ -5,11 +5,11 @@ import org.junit.runner.Result;
 import org.junit.runner.notification.Failure;
 
 /**
- * A runner for Ex6Tester
+ * A runner for Tester
  * @author isaacdel
  *
  */
-public class Ex6TestRunner {
+public class TestRunner {
 	public static void main(String[] args) {
 		// Running tests
 		Result result = JUnitCore.runClasses(Ex6Tester.class);

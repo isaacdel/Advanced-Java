@@ -10,7 +10,7 @@ import org.junit.Test;
  *
  */
 
-public class ex4Test {
+public class Tester {
 	String str1 ="Hi", str2 ="Bye",str3="Hello", str4 ="Ciao" ;
 
 

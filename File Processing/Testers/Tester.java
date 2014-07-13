@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 import oop.ex6.filescript.MyFileScript;
 
 @RunWith(Parameterized.class)
-public class Ex6Tester {
+public class Tester {
 	/**
 	 * The location of the test files
 	 */

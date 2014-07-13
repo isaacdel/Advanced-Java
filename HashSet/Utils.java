@@ -11,7 +11,7 @@ import java.util.List;
  * @author clids 2013
  *
  */
-public class Ex4Utils {
+public class Utils {
 
 	/**
 	 * Reads a text file (such that each line contains a single word), 

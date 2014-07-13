@@ -1,4 +1,4 @@
-package Ex6Tester;
+package Tester;
 
 import Ex6Tester.Ex6Tester;
 public class TestException extends Exception {
