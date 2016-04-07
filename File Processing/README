@@ -1,5 +1,3 @@
-isaacdel
-
 ==================
 =  Description:  =
 ==================
@@ -10,7 +8,7 @@ design
 
 README                 This file
 ##############################
-package ex6.filescript:
+package filescript:
 
 MyFileScript.java - Contains the main method, performs the action
  on a given dir and command file.
@@ -21,22 +19,22 @@ in order to create sections.
 Section.java - Contains the method which creates sections of Filter
 ,Order objects.
 
-package ex6.filescript.Exceptions:
-oop.ex6.filescript.TypeOneError.java - A exception class for 
+package filescript.Exceptions:
+oop.filescript.TypeOneError.java - A exception class for 
 the first type errors.
 
-oop.ex6.filescript.TypeTwoError.java - A exception class for the
+oop.filescript.TypeTwoError.java - A exception class for the
 second type errors.
 
-oop.ex6.filescript.SubsectionExecption.java - A exception class for 
+oop.filescript.SubsectionExecption.java - A exception class for 
 the second type errors.extends TypeTwoError-throws an exception if 
 there is a problem with the command file sections.
 
-oop.ex6.filescript.IOExecption.java - A exception class for 
+oop.filescript.IOExecption.java - A exception class for 
 the second type errors.extends TypeTwoError-throws when an IOexception
 is violated.
 ##############################						
-package ex6.Filter:
+package Filter:
 
 Filter.java - The interface from which all of the filter methods inherit.
 
@@ -76,11 +74,11 @@ is a problem with the filter line.implements Filter.
 
 ContainsFilter.java-A filter that checks if a file exists in the dir.
 						
-package ex6.Filter.exceptions:
+package Filter.exceptions:
 IllegalValuesExceptions.java - Implements TypeOneError, used to identify 
 bad value exceptions.
 ##############################
-package ex6.Order:
+package Order:
 
 AbsOrder.java - extends FileOrder , used to sort the files by 
 absolute paths.
@@ -100,13 +98,6 @@ package ex2.order.exceptions:
 OrderValueException - Implements TypeOneError, used to identify bad value 
 in order command.
 
-								
-
-
-=  Implementation Issues  =
-===========================
-
-Answers to Questions:
 
 1) Design:
 I chose to work with two main Interfaces-FILTER,ORDER.
