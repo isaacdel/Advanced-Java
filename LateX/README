@@ -1,9 +1,3 @@
-isaacdel
-
-
-
-
-
 ==================
 =  Description:  =
 ==================
@@ -35,14 +29,3 @@ knowing if its a part of an exp or its barred etc.
  mathterms like fraction so their tolatex
  will print two terms that each one of them 
 may be built of few mathterms.
-
-=  Implementation Issues  =
-mentioned some in the q&a
-
-Answers to Questions:
-1)i would create a new integral class like the sum class because the limits
- of the integral could be complex expressions 
-like the limits of the sum.it will extend MathTerm as well.
-2)there were few times when giving a more detailed explanation could help 
-with the testers,like the case that the order of the 
-/negated,/exp and /barred in the method is important.
