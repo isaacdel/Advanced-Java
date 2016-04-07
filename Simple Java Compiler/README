@@ -1,6 +1,3 @@
-roee168
-isaacdel
-
 ==================Files Description:====================
 
 package main:
@@ -60,27 +57,3 @@ and how to arrange the data structure.
 the main difficulty was to consider and take into account all of the possible and various options allowed in a single code line.
 we were able to solve and analyze most of them.the rest can be handled without major code changes only few tweaks.
 
-answers to questions:
-6.1
-we decided to handle errors by bubbling up the errors to the Compiler class.
-This class holds a default variable the is set to zero.once we catch an error the variable is changed to 1,and 
-the compiling process is stopped.
-then the result is printed to screen.
-
-6.2
-In case we want to add some new variables that are not currently supported,we would add the specific regex 
-to the type regex so the compiler will be aware the this new name
-is valid as well.
-then just add the string representation of the name to the Rightside class.
-
-to add else block all we need is to let the compiler to identify it and pass it throw the if while
-witch will open new scope.
-6.3
-the regex we used the most inside the code is the Method Declaration and the Variable declaration,because these 
-regex are the �root� of most valid code lines. 
-  
-       
- 
- 
- 
-   
