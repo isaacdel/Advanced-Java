@@ -20,48 +20,4 @@ AvlTree.java-extends BinarySearchTree. this class also contains balancing
 AvlIterator.java-implements Iterator. this class is my implementation to 
 iterator.its able to throw next val or check if it exist on a given tree.
 
-README                 This file
 
-=  Implementation Issues  =
-had some difficulties using the BST's add and delete methods because all of
-these methods work recursively and it made a mess out of the heights in the
-tree,this affected the rotations as well.
-
-Answers to Questions:
-1)in addition to the AVL class i added the Tree interface,the BST that AVL
-inherited and the Iterator class.
-the purpose was making the whole program more modular.its not only an AVL,
-it can also be extended to other types of trees that can implement Tree
-or even extend BST or AVL if they got similar properties.
-*the AVL class uses many methods from BST like the nested Node class that 
-creates a new tree from nodes that can store their personal data (Depth,value,
-height and more inner methods that construct and add nodes).
-the Avl also uses the methods : size,isLeftChild,isLeaf,binarySearch
-and reHeight that can be used in both classes as they are relevant to both
-trees.
-*the AVL class also uses the Iterator class that is able to check and return
-the values in the tree one by one when demanded by the methods hasNext and
-Next. the Next op is done by starting from the smallest val in the tree 
-(the findMinNodes (not the same as the static one that we need to implement))
-and that stepping forward to the next node in ascending order (the 
-findSuccessor method) and returning it in the next time the Next method
-is called.
-
-2)i mainly followed the DAST course add and delete methods and also checked 
-few more cases (like 2 children 1 child or none in delete).
-in both add and delete methods i used helper methods.
-*in add i used insert(Node node, int value). this method gets the trees 
-root as well so i can check
-and place the val in its proper place,so i started these checks from 
-"the beginning".
-*in delete i used the deleteNode(Node target) method that gets the node
-that actually holds the value we want to delete. this way i can handle the
-node (move,replace change heights etc) more easly. the case when we add a node
-than delete it immediately is taken care of in the first delete method. 
-
-3)the numbers to insert are:
-5, 3, 8, 2, 4, 7, 10, 11, 9, 6, 1, 12
-this will create a height 4 AVL tree.
-we can calculate what is the min nodes required to build a height h AVL using
-the findMinNodes we created than adding nodes to same level and height in the
-tree that way we prevent it from rotating.
